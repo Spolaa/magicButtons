@@ -30,7 +30,7 @@ _Include .scss file in your main.scss_
 ```
 
 
-###Nuova instanza del plugin
+### Nuova instanza del plugin
 
 ```javascript
 /**
