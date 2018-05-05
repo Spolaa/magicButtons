@@ -15,24 +15,24 @@ Il seguente plugin è basato su jquery e le icone sono quelle di FontAwesome 5 '
 ### Inclusion
 
 _Js inclusion_  
-```
+```html
 <script src="/magicBtn.js"></script>
 ```  
 
 _Include normal css_  
-```
+```html
 <link rel="stylesheet" href="/magicBtn.css">
 ```
  
 _Include .scss file in your main.scss_  
-```
+```scss
 @import "_magicBtn";"
 ```
 
 
 ###Nuova instanza del plugin
 
-```
+```javascript
 /**
  * @param string selector - Target
  * @param obj options - Options to customize plugins
@@ -46,7 +46,7 @@ $.magicBtn(selector,options);
 
 Si può inizializzare il plugin con le seguenti opzioni:
 
-```
+```javascript
 options = {
     buttonType: 'type', // 'material','outline'
     rounded: false, // (bool) - add class '.round', border-radius: 5px
@@ -58,7 +58,7 @@ options = {
 ## Metodi applicabili a qualsiasi pulsante
 
 #### 1. Start loading
-```
+```javascript
 var options = {
     loadginText: 'Your loading text',
     loadingIcon: bool(true),
@@ -74,7 +74,7 @@ _Actions of this method_
 
 
 #### 2. Result status
-```
+```javascript
 var options = { 
     initialText: data-initial-text
     status: '',//One of success, warning, error. Empty for default.
@@ -99,7 +99,7 @@ Possono esserci quattro tipi di result:
 
 #### 3. Remove loading
 
-```
+```javascript
 var options = {
     text: 'Your custom text for the button'
 }  
@@ -111,7 +111,7 @@ _Actions of this mehod_
 - remove class: 'success','warning' or 'error'
 
 #### 4. Disabled status
-```
+```javascript
 var options = {}  
   
 $('#selector').disabled(options);
