@@ -124,5 +124,5 @@ _Actions of this mehod_
 
 Elecono degli errori che sono restituiti dal plugin:
 
-1. resultLoading(); Se più stati sono inizializzati come true, resituisce un error può
+1. <code>resultLoading();</code> Se più stati sono inizializzati come true, resituisce un error può
 essere solo uno (success,warning,error).
