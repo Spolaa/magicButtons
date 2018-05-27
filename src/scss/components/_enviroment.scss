@@ -1,0 +1,42 @@
+body {
+  background-color: $white-1;
+}
+
+*:focus {
+  outline: none !important;
+  boxshadow: none !important;
+}
+
+.magnific-btn-function {
+
+    .button-container {
+        /* Button position */
+        display: block;
+        text-align: center;
+        margin: 40px 0;
+
+        > button {
+            display: block;
+            margin: auto;
+        }
+
+        &.border-right {
+            border-right: 0px solid #2a2a2a;
+        }
+
+         > p {
+          display:block;
+          margin: auto;
+        }
+    }
+
+
+}
+
+
+*:before,
+*:after {
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
+  z-index: -1;
+}
