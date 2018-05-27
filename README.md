@@ -1,36 +1,39 @@
-# magicBtn v.1.0.0 - jQuery plugin
+# magicButtons v.1.0.0 - jQuery plugin
+
+Inline-style: 
+![logo](/assets/img/logo300.png "Logo Title Text 1")
 Version: 1.0.0.  
 Author: 95stefano.gagliardi@gmail.com  
-License: [MIT](https://github.com/Spolaa/freedom-template/blob/master/LICENSE)
+License: [MIT](https://github.com/Spolaa/magicButtons/license/)
 
 Try demo here ! [Demo]()
 
-### Dependencied
+### Dependencies
 
-Il seguente plugin è basato su jquery e le icone sono quelle di FontAwesome 5 'solid'.
+The following plugin is based on jquery. The default icons are those of FontAwesome 5 (solid).
 
-- jQuery v 3.2.1 [Site](https://jquery.com/) - [License](https://jquery.org/license/)
-- Font Awesome [Site](http://fontawesome.io/) - [License](http://fontawesome.io/license/)
+- jQuery (minimum) version v 1.12.4 [Site](https://jquery.com/) - [License](https://jquery.org/license/)
+- Font Awesome 5 [Site](http://fontawesome.io/) - [License](http://fontawesome.io/license/)
 ## Get start
 ### Inclusion
 
-_Js inclusion_  
+_Inclusion via js_  
 ```html
 <script src="/magicBtn.js"></script>
 ```  
 
-_Include normal css_  
+_Inclusion via compiled css_  
 ```html
 <link rel="stylesheet" href="/magicBtn.css">
 ```
  
-_Include .scss file in your main.scss_  
+_Inclusion via .scss_  
 ```scss
-@import "_magicBtn";"
+@import "magicBtn";
 ```
 
 
-### Nuova instanza del plugin
+###New instance of plugin
 
 ```javascript
 /**
@@ -40,11 +43,11 @@ _Include .scss file in your main.scss_
  
 $.magicBtn(selector,options);
 ```
-1. Il primo parametro rappresenta il contenitore sul quale avrà effetto il plugin. Di default lo scope è globale.
-2. Il secondo si tratta di un oggetto con il quale inizializzare il plugin.
+1. The first parameter represents the container on which the plugin will take effect. By default the scope is global (on all the document).
+2. The second parameter is an object, which contains the initialization options.
    
 
-Si può inizializzare il plugin con le seguenti opzioni:
+You can initialize the plugin with the following options:
 
 ```javascript
 options = {
@@ -55,7 +58,7 @@ options = {
 ```
 
 
-## Metodi applicabili a qualsiasi pulsante
+## Methods applicable to any button
 
 #### 1. Start loading
 ```javascript
@@ -67,10 +70,10 @@ var options = {
   
 $('#selector').startLoading(options);
 ```
-_Actions of this method_
-- Il testo iniziale viene salvato come attributo: ```<button data-initial-text="$text">$text</button>```
-- Append text
-- If Icon options is true append the html string
+_Options of this method_
+- The initial text is saved as an attribute: ```<button data-initial-text="$text">$text</button>```.
+- Append text.
+- If the 'icon' option is true then the html string is hung.
 
 
 #### 2. Result status
@@ -82,7 +85,7 @@ var options = {
   
 $('#selector').resultLoading(options);
 ```
-Possono esserci quattro tipi di result:
+There may be four types of results:
 1. _success_:
     - statusText: 'Result text'
     - statusIcon: '<code><i></i></code>'
@@ -95,7 +98,7 @@ Possono esserci quattro tipi di result:
     - statusText: 'Result text'
     - statusIcon: '<i></i>'
     - disalbed: bool(false)
-4. Default: Viene rimesso il testo iniziale salvato tramite attributo con il metodo <code>startLoading();</code>
+4. Default: The initial text saved by attribute with the method is returned <code>startLoading();</code>
 
 #### 3. Remove loading
 
@@ -120,9 +123,22 @@ _Actions of this mehod_
 - Add class 'disabled'  
 - Add attribute 'disabled'
 
+##Helper classes and functions
+
+#### Button block
+The button has 100% width. ```html <button class="block"></button>```
+
+### Icon rotating
+If the loading icons are static, just add the rotating class.
+```javascript
+  $(selector).startLoading({
+    'icon': '<i class="fas fa-cog rotating"></i>'
+  })
+ ```
+
 ## Errors
 
-Elecono degli errori che sono restituiti dal plugin:
+Elect errors that are returned by the plugin:
 
-1. <code>resultLoading();</code> Se più stati sono inizializzati come true, resituisce un error può
-essere solo uno (success,warning,error).
+1. resultLoading(); If multiple states are initialized as true, returns an error can
+be just one (success, warning, error).
