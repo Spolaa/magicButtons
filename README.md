@@ -1,9 +1,9 @@
 # magicButtons v.1.0.0 - jQuery plugin
 
-<img src="img/logo300.png" width="200">  
-Version: 1.0.0.  
-Author: 95stefano.gagliardi@gmail.com  
-License: [MIT](https://github.com/Spolaa/magicButtons/license/)  
+<img src="img/logo300.png" width="200"></br>
+Version: 1.0.0.</br>
+Author: 95stefano.gagliardi@gmail.com</br>
+License: [MIT](https://github.com/Spolaa/magicButtons/license/)</br>
 
 Try demo here ! [Demo]()
 
