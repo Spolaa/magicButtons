@@ -1,8 +1,8 @@
 /**
  * magicBtn
  *
- * @requires jQuery <jqueryeeeeeee understand wich is min version to use>
- * @see Documentation <GITHUB LINK>
+ * @requires jQuery (minimum) v.1.12.4
+ * @see Documentation https://github.com/Spolaa/magicButtons/
  * @version 1.0.0
  * @author Stefano Gagliardi <stefano.gagliardi@sitisrl.it>
  */
