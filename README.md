@@ -125,7 +125,10 @@ _Actions of this mehod_
 ##Helper classes and functions
 
 #### Button block
-The button has 100% width. ```html <button class="block"></button>```
+The button has 100% width. 
+```html 
+  <button class="block"></button>
+```
 
 ### Icon rotating
 If the loading icons are static, just add the rotating class.
