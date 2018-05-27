@@ -122,7 +122,7 @@ _Actions of this mehod_
 - Add class 'disabled'  
 - Add attribute 'disabled'
 
-##Helper classes and functions
+## Helper classes and functions
 
 #### Button block
 The button has 100% width. 
