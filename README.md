@@ -1,7 +1,6 @@
 # magicButtons v.1.0.0 - jQuery plugin
 
-Inline-style: 
-![logo](/img/logo300.png "Logo Title Text 1")
+![logo](/img/logo300.png "Logo Title Text 1")  
 Version: 1.0.0.  
 Author: 95stefano.gagliardi@gmail.com  
 License: [MIT](https://github.com/Spolaa/magicButtons/license/)
