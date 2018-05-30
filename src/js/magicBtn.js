@@ -1,39 +1,45 @@
 /**
  * magicBtn
  *
- * @requires jQuery <jqueryeeeeeee understand wich is min version to use>
- * @see Documentation <GITHUB LINK>
+ * @requires jQuery 1.12.4+
+ * @see Documentation https://github.com/Spolaa/magicButtons
  * @version 1.0.0
  * @author Stefano Gagliardi <stefano.gagliardi@sitisrl.it>
  */
 
+/**
+ * Used to define debug mode
+ * 
+ * @var {bool} true if debug mode is on, false otherwise
+ */
 var debug = false;
 
 (function ( $ ) {
 
     /**
-     * Init functions
-     * Se non si instanzia $.magicBtn(); tutte le funzioni interne saranno indefinite.
+     * Init function
+     * Notice: if this plugin is not initialized, all child methods will'be undefined
+     * 
+     * @since 1.0.0
+     * 
+     * @param {string} selector 
+     * @param {obj} options
+     * @return {undefined}
      */
     $.magicBtn = function(selector, options) {
-
-
+        
         var settings = $.extend({
-
             buttonType: '',
             rounded: false,
             fill: false
-
         }, options);
 
-
-
-        //Check validation of buttonType: empty, material, outline
-        if(settings.buttonType != '' && settings.buttonType != 'material' && settings.buttonType != 'outline') {
+        // Check validation of buttonType: empty, material, outline
+        if (settings.buttonType != '' && settings.buttonType != 'material' && settings.buttonType != 'outline') {
             settings.buttonType = 'material';
         }
 
-        if(settings.buttonType != '') {
+        if (settings.buttonType != '') {
             var selector = selector + ' button';
             jQuery(selector).each(function () {
                 jQuery(this).addClass('magicBtn');
@@ -41,14 +47,14 @@ var debug = false;
             });
         }
 
-        if(settings.buttonType == 'outline' && settings.fill){
+        if (settings.buttonType == 'outline' && settings.fill){
             //Add hover property
             jQuery(selector).each(function () {
                 jQuery(this).addClass('fill');
             });
         }
 
-        if(settings.rounded) {
+        if (settings.rounded) {
             jQuery(selector).each(function () {
                 jQuery(this).addClass('round');
             });
@@ -62,7 +68,7 @@ var debug = false;
          */
         $.fn.startLoading = function (options) {
 
-            //Save initial dangerText
+            // Save initial dangerText
             $(this).attr('data-initial-text', $(this).text());
 
             // This is the easiest way to have default options.
@@ -71,7 +77,7 @@ var debug = false;
                 // These are the defaults.
                 loadingText: 'Send...',
 
-                //Icon options
+                // Icon options
                 loadingIcon: true,
                 icon: '<i class="fas fa-spinner fa-spin fa-1x fa-fw"></i>',
 
@@ -83,8 +89,8 @@ var debug = false;
                 $(this).append(settings.icon);
             }
 
-            //This is required if you want to support the 'Chaining' mode.
-            //Chaining: when you link five or six actions onto one selector.
+            // This is required if you want to support the 'Chaining' mode.
+            // Chaining: when you link five or six actions onto one selector.
             return this;
 
         }
@@ -262,7 +268,66 @@ var debug = false;
 
 }(jQuery)); //To avoid conflicts with $, plese see < http://benalman.com/news/2010/11/immediately-invoked-function-expression/ >
 
-//Helper functions
-function cl(element) {
-    if(debug) console.log('CL FUNCTION',element);
+
+/**
+ * If debug is true, write a log in the developer console
+ * 
+ * @author Francesco Bancalari <francesco.bancalari@sitisrl.it>
+ * @since 1.0.0
+ * 
+ * @param {string} key
+ * @param {mixed} value
+ * @param {string} type type of log, can be log, warn, error
+ * @returns {undefined} just write a log
+ */
+function cl(key, value, type) {
+    
+    var logType;
+    
+    // Prevent any log if debug mode is false
+    if (!this.debug) {
+        return;
+    }
+    
+    switch (type) {
+        case 'log':
+            if (console && console.log) {
+                if (value) {
+                    console.log(key, value);
+                } else {
+                    console.log(key);
+                }                
+            }
+            break;
+        
+        case 'warn':
+            if (console && console.warn) {
+                if (value) {
+                    console.warn(key, value);
+                } else {
+                    console.warn(key);
+                }   
+            }
+            break;
+        
+        case 'error':
+            if (console && console.error) {
+                if (value) {
+                    console.error(key, value);
+                } else {
+                    console.error(key);
+                }   
+            }
+            break;
+            
+        default:
+            if (console && console.log) {
+                if (value) {
+                    console.log(key, value);
+                } else {
+                    console.log(key);
+                }   
+            }
+            break;
+    }
 };
