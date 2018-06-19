@@ -32,7 +32,7 @@ _Inclusion via .scss_
 ```
 
 
-###New instance of plugin
+### New instance of plugin
 
 ```javascript
 /**
