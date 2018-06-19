@@ -5,7 +5,7 @@ Version: 1.0.0.</br>
 Author: 95stefano.gagliardi@gmail.com</br>
 License: [MIT](https://github.com/Spolaa/magicButtons/blob/master/LICENSE.md)</br>
 
-Try demo here ! [Demo]()
+Try demo here ! [Demo](http://gagliardistefano.it/magicButtons/)
 
 ### Dependencies
 
